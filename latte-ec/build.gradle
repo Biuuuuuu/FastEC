@@ -26,6 +26,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':latte-core')
+    //noinspection GradleDeprecatedConfiguration
+    compile project(':latte-core')
 
 }
