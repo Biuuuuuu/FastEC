@@ -38,6 +38,7 @@ public class Configurator {
         return this;
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void checkConfiguration(){
         final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigType.CONFIG_READY.name());
         if (!isReady){
@@ -45,6 +46,9 @@ public class Configurator {
         }
     }
 
+    /**
+     * 再获取配置时调用checkConfiguration()，保证配置的正确性和完整性
+     */
     @SuppressWarnings("unchecked")
     final <T> T getConfiguration(Enum<ConfigType> key){
         checkConfiguration();
